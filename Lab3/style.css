@@ -1,0 +1,161 @@
+body{
+    font-family: "Times New Roman", serif;
+    background-color: aliceblue;
+    margin: 40px;
+    color: #1f2a37;
+}
+
+h1{
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 30px;
+}
+
+h2{
+    color: darkred;
+    margin-top: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.picture{
+    width: 40%;
+}
+
+.picture img{
+    width: 100%;
+    border: 3px solid black;
+    display: block;
+}
+
+.table_block{
+    width: 55%;
+}
+
+.variantTable{
+    width: 100%;
+    height: 420px;
+    border: 5px solid darkblue;
+    border-radius: 20px;
+    border-spacing: 8px;
+    background-color: white;
+}
+
+.variantTable td{
+    border: 3px solid black;
+    padding: 20px;
+}
+
+.blue{
+    background-color: lightblue;
+}
+
+.red{
+    background-color: lightcoral;
+}
+
+.schedule-title,
+.comparison-title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.scheduleTable{
+    width: 100%;
+    border: 4px solid darkblue;
+    border-radius: 18px;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+    background-color: white;
+}
+
+.scheduleTable caption{
+    caption-side: top;
+    font-weight: bold;
+    font-size: 22px;
+    color: darkblue;
+    margin-bottom: 10px;
+}
+
+.scheduleTable th,
+.scheduleTable td{
+    border: 2px solid #2b3d66;
+    padding: 12px 10px;
+}
+
+.scheduleTable th{
+    background-color: #2b3d66;
+    color: white;
+    text-align: center;
+}
+
+.scheduleTable tr:hover{
+    background-color: #eef5ff;
+}
+
+.scheduleTable td{
+    text-align: center;
+}
+
+.room{
+    color: darkred;
+    text-align: right;
+    font-weight: bold;
+}
+
+.comparisonTable{
+    width: 100%;
+    border: 4px solid #4b2d73;
+    border-radius: 18px;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+    background-color: white;
+}
+
+.comparisonTable th,
+.comparisonTable td{
+    border: 2px solid #4b2d73;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.comparisonTable th{
+    background-color: #4b2d73;
+    color: white;
+}
+
+.comparisonTable tbody tr:nth-child(odd){
+    background-color: #f7f1ff;
+}
+
+.comparisonTable tbody tr:nth-child(even){
+    background-color: #eef8ff;
+}
+
+.comparisonTable td:first-child,
+.comparisonTable th:first-child{
+    background-color: #dff5df;
+    font-weight: bold;
+}
+
+.comparisonTable td:last-child,
+.comparisonTable th:last-child{
+    background-color: #ffe7e7;
+}
+
+.comparisonTable tr:hover{
+    background-color: #fff7cc;
+}
+
+.tableShadow{
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}

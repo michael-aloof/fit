@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота з матрицями</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="hero">
+      <h1>Робота з матрицями</h1>
+      <p>
+        Прізвище: ____________________<br>
+        Варіант: A, B, C
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Умова завдань</h2>
+      <ol class="task-list">
+        <li>
+          <strong>A.</strong> Дана цілочисленна матриця <em>m × n</em>. Побудувати та вивести на екран транспоновану матрицю.
+          Параметри <em>m</em>, <em>n</em> вводяться з клавіатури, матриця заповнюється випадковими числами.
+        </li>
+        <li>
+          <strong>B.</strong> Сформувати наступну матрицю і вивести її на екран в красивому вигляді.
+        </li>
+        <li>
+          <strong>C.</strong> Дана цілочисленна матриця <em>m × n</em>. Відняти з кожного елемента рядка мінімальний елемент цього рядка.
+          Вивести отриману матрицю.
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Завдання A і C: робота з матрицею</h2>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="rows">К-сть рядків (m)</label>
+          <input type="number" id="rows" min="1" value="3">
+        </div>
+
+        <div class="control-group">
+          <label for="cols">К-сть стовпців (n)</label>
+          <input type="number" id="cols" min="1" value="3">
+        </div>
+
+        <button type="button" onclick="createMatrixFields()">Створити поля</button>
+      </div>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="minValue">Мінімум</label>
+          <input type="number" id="minValue" value="-9">
+        </div>
+
+        <div class="control-group">
+          <label for="maxValue">Максимум</label>
+          <input type="number" id="maxValue" value="9">
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="integerMode" checked>
+          Генерувати цілі числа
+        </label>
+
+        <button type="button" onclick="fillRandomMatrix()">Заповнити випадково</button>
+      </div>
+
+      <div id="matrixFields" class="matrix-holder"></div>
+
+      <div class="buttons">
+        <button type="button" onclick="showTranspose()">Показати транспоновану матрицю</button>
+        <button type="button" onclick="subtractRowMinimums()">Відняти мінімум рядка</button>
+      </div>
+
+      <div class="result-block">
+        <h3>Результат A</h3>
+        <div id="transposeResult" class="table-holder"></div>
+      </div>
+
+      <div class="result-block">
+        <h3>Результат C</h3>
+        <div id="rowMinResult" class="table-holder"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Завдання B: спеціальна матриця</h2>
+      <p>
+        Матриця будується за зразком: значення заповнюються по стовпцях, а напрямок заповнення
+        чергується зверху вниз і знизу вгору.
+      </p>
+
+      <div class="buttons">
+        <button type="button" onclick="buildSpecialMatrix()">Побудувати матрицю B</button>
+      </div>
+
+      <div id="specialMatrixResult" class="table-holder"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

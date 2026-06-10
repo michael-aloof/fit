@@ -1,0 +1,28 @@
+body{
+    background-color: lightblue;
+    color: darkblue;
+    font-family: Times New Roman;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+h1{
+    color: darkred;
+}
+
+h2{
+    color: purple;
+}
+
+a{
+    color: red;
+}
+
+a:visited{
+    color: brown;
+}
+
+a:hover{
+    color: green;
+}

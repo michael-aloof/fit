@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота з масивами</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Робота з масивами</h1>
+      <p>
+        Створення масивів трьома способами, виведення елементів,
+        робота з forEach, таблицями, двовимірним масивом і сортуванням вектора.
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>1. Три масиви довжини 5</h2>
+
+      <div class="buttons">
+        <button type="button" onclick="showFirstLast()">Перший і останній елемент</button>
+        <button type="button" onclick="showForLoop()">Вивести через for</button>
+        <button type="button" onclick="showForEachExample()">Приклад forEach</button>
+        <button type="button" onclick="myfunction1()">Показати масиви в таблиці</button>
+        <button type="button" onclick="checkArray()">Перевірити Array.isArray()</button>
+      </div>
+
+      <p id="firstLastResult" class="result"></p>
+      <p id="forLoopResult" class="result"></p>
+      <div id="forEachResult" class="result"></div>
+      <p id="arrayCheckResult" class="result"></p>
+      <div id="arraysTableResult" class="table-holder"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Двовимірний масив 4 × 4</h2>
+
+      <div class="buttons">
+        <button type="button" onclick="showMatrix()">Показати двовимірний масив</button>
+      </div>
+
+      <div id="matrixResult" class="table-holder"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Вектор і сортування</h2>
+
+      <div class="controls">
+        <label for="vectorSize">Кількість елементів n:</label>
+        <input type="number" id="vectorSize" min="1" value="5">
+
+        <button type="button" onclick="generateVectorFields()">Створити поля</button>
+      </div>
+
+      <div id="vectorFields" class="vector-fields"></div>
+
+      <div class="buttons">
+        <button id="copy_to_array" type="button" onclick="copy_to_array()">copy_to_array</button>
+        <button type="button" onclick="copy_to_array_numbers()">copy_to_array_numbers</button>
+        <button type="button" onclick="sortAsc()">Сортування за зростанням</button>
+        <button type="button" onclick="sortDesc()">Сортування за спаданням</button>
+        <button type="button" onclick="sortByLastDigit()">Сортування за останньою цифрою</button>
+      </div>
+
+      <p id="vectorStatus" class="result"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

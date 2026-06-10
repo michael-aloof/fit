@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>Блок vs Inline</title>
+  <style>
+    body{
+      font-family: "Times New Roman", serif;
+      font-size: 20px;
+      margin: 30px;
+      background-color: #f7fbff;
+    }
+
+    h1{
+      text-align: center;
+      color: darkblue;
+    }
+
+    /* Блокові елементи */
+    div{
+      border: 2px solid blue;
+      background-color: lightblue;
+      margin: 10px 0;
+      padding: 10px;
+    }
+
+    /* Inline-елементи */
+    span{
+      color: red;
+      background-color: yellow;
+      padding: 2px 6px;
+      text-decoration: underline;
+    }
+
+    a{
+      color: green;
+      background-color: #e6ffe6;
+      text-decoration: none;
+      padding: 2px 6px;
+    }
+
+    strong{
+      color: darkred;
+      background-color: #ffd9d9;
+      padding: 2px 6px;
+    }
+
+    /* Експеримент з display */
+    .inline-div{
+      display: inline;
+      background-color: #cfe8ff;
+    }
+
+    .block-span{
+      display: block;
+      margin-top: 8px;
+      background-color: #fff0b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Демонстрація блокових та inline елементів</h1>
+
+  <div>Це блоковий елемент DIV</div>
+  <div>Ще один блоковий елемент DIV</div>
+
+  <p>
+    У цьому параграфі є <span>inline елемент SPAN</span>,
+    <a href="https://example.com" target="_blank">посилання A</a>
+    та <strong>виділений елемент STRONG</strong>.
+  </p>
+
+  <p>
+    Ще один приклад: <span>перший span</span>,
+    <span>другий span</span>,
+    <span>третій span</span>.
+  </p>
+
+  <div class="inline-div">Цей DIV зроблено inline</div>
+  <div class="inline-div">І цей DIV теж inline</div>
+
+  <span class="block-span">Цей SPAN зроблено block</span>
+  <span class="block-span">І цей SPAN теж block</span>
+
+</body>
+</html>

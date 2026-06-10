@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Перемикання режимів відображення</title>
+
+```
+<style>
+
+    body{
+        font-family: "Times New Roman", serif;
+        font-size: 20px;
+        background-color: aliceblue;
+        margin: 40px;
+    }
+
+    h1{
+        color: darkblue;
+    }
+
+    #textBox{
+
+        display: block;
+
+        border: 3px solid darkgreen;
+
+        background-color: lightgreen;
+
+        padding: 15px;
+
+        margin-top: 20px;
+
+    }
+
+    span{
+
+        background-color: yellow;
+
+        padding: 5px;
+
+    }
+
+    button{
+
+        margin-top: 20px;
+
+        padding: 10px;
+
+        font-size: 18px;
+
+    }
+
+    #status{
+
+        margin-top: 20px;
+
+        color: darkred;
+
+        font-weight: bold;
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<h1>
+Перемикання між block та inline
+</h1>
+
+<p>
+Нижче наведено елемент DIV та елемент SPAN.
+</p>
+
+<div id="textBox">
+
+Це блоковий елемент DIV.
+
+<span>
+Всередині нього знаходиться SPAN.
+</span>
+
+</div>
+
+<button onclick="changeMode()">
+Змінити режим відображення
+</button>
+
+<p id="status">
+Поточний режим: block
+</p>
+
+<script>
+
+function changeMode()
+{
+
+    let box = document.getElementById("textBox");
+
+    let status = document.getElementById("status");
+
+    if(box.style.display == "inline")
+    {
+
+        box.style.display = "block";
+
+        status.innerHTML =
+        "Поточний режим: block";
+
+        console.log("Зараз активний режим block");
+
+    }
+
+    else
+    {
+
+        box.style.display = "inline";
+
+        status.innerHTML =
+        "Поточний режим: inline";
+
+        console.log("Зараз активний режим inline");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

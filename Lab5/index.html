@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма перепису населення</title>
+  <style>
+    body{
+      margin: 0;
+      font-family: "Times New Roman", serif;
+      background: linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+      color: #1f2a37;
+    }
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 18px 50px;
+    }
+
+    .header{
+      background: white;
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #dbe5f2;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    h1{
+      margin: 0 0 10px;
+      color: #123a6f;
+      font-size: 40px;
+    }
+
+    .subtitle{
+      margin: 0;
+      font-size: 19px;
+      color: #4a5568;
+      line-height: 1.5;
+    }
+
+    form{
+      background: white;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #dbe5f2;
+    }
+
+    fieldset{
+      border: 1px solid #c9d8ea;
+      border-radius: 16px;
+      padding: 18px 18px 10px;
+      margin-bottom: 18px;
+      background: #fcfeff;
+    }
+
+    legend{
+      padding: 0 10px;
+      font-weight: bold;
+      color: #123a6f;
+      font-size: 18px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 18px;
+    }
+
+    .full{
+      grid-column: 1 / -1;
+    }
+
+    label{
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #2b3440;
+    }
+
+    input, select, textarea{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1px solid #b9c8da;
+      border-radius: 10px;
+      font-size: 17px;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    textarea{
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .radio-group, .check-group{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 6px;
+    }
+
+    .radio-item, .check-item{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+    }
+
+    .inline-note{
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .buttons{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    button{
+      border: none;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.2s ease;
+    }
+
+    button:hover{
+      transform: translateY(-1px);
+    }
+
+    .primary{
+      background: #1e5eff;
+      color: white;
+    }
+
+    .secondary{
+      background: #e8eef8;
+      color: #1f2a37;
+    }
+
+    .result{
+      margin-top: 18px;
+      padding: 18px;
+      background: #f3f8ff;
+      border-left: 5px solid #1e5eff;
+      border-radius: 12px;
+      display: none;
+    }
+
+    .result h2{
+      margin: 0 0 10px;
+      color: #123a6f;
+    }
+
+    .result p{
+      margin: 6px 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px){
+      .grid{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Форма перепису населення</h1>
+      <p class="subtitle">
+        Заповніть анкету для внесення основних даних про особу, місце проживання, освіту, роботу та інші відомості.
+      </p>
+    </div>
+
+    <form id="censusForm">
+      <fieldset>
+        <legend>1. Основні відомості</legend>
+        <div class="grid">
+          <div>
+            <label for="surname">Прізвище</label>
+            <input type="text" id="surname" name="surname" placeholder="Наприклад, Іванов">
+          </div>
+
+          <div>
+            <label for="name">Ім’я</label>
+            <input type="text" id="name" name="name" placeholder="Наприклад, Михайло">
+          </div>
+
+          <div>
+            <label for="patronymic">По батькові</label>
+            <input type="text" id="patronymic" name="patronymic" placeholder="Наприклад, Русланович">
+          </div>
+
+          <div>
+            <label for="gender">Стать</label>
+            <select id="gender" name="gender">
+              <option value="">Оберіть...</option>
+              <option>Чоловіча</option>
+              <option>Жіноча</option>
+              <option>Інше</option>
+              <option>Не вказувати</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="birthdate">Дата народження</label>
+            <input type="date" id="birthdate" name="birthdate">
+          </div>
+
+          <div>
+            <label for="birthplace">Місце народження</label>
+            <input type="text" id="birthplace" name="birthplace" placeholder="Наприклад, м. Одеса">
+          </div>
+
+          <div class="full">
+            <label for="citizenship">Громадянство</label>
+            <input type="text" id="citizenship" name="citizenship" placeholder="Наприклад, Україна">
+          </div>
+
+          <div>
+            <label for="nation">Нація</label>
+            <input type="text" id="nation" name="nation" placeholder="Наприклад, українець / українка">
+          </div>
+
+          <div>
+            <label for="ethnicity">Етнічна належність</label>
+            <input type="text" id="ethnicity" name="ethnicity" placeholder="Наприклад, українська">
+          </div>
+
+          <div class="full">
+            <label for="religion">Релігійна належність</label>
+            <input type="text" id="religion" name="religion" placeholder="Наприклад, православ'я">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Сімейний стан</legend>
+        <div class="grid">
+          <div class="full">
+            <label>Сімейний стан</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="marital" value="Не одружений / не заміжня">Не одружений / не заміжня</label>
+              <label class="radio-item"><input type="radio" name="marital" value="Одружений / заміжня">Одружений / заміжня</label>
+              <label class="radio-item"><input type="radio" name="marital" value="Розлучений / розлучена">Розлучений / розлучена</label>
+              <label class="radio-item"><input type="radio" name="marital" value="Вдівець / вдова">Вдівець / вдова</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="children">Кількість дітей</label>
+            <input type="number" id="children" name="children" min="0" step="1" placeholder="0">
+          </div>
+
+          <div>
+            <label for="familyMembers">Кількість членів сім’ї</label>
+            <input type="number" id="familyMembers" name="familyMembers" min="1" step="1" placeholder="Наприклад, 3">
+          </div>
+
+          <div class="full">
+            <label for="livesWith">З ким проживає</label>
+            <input type="text" id="livesWith" name="livesWith" placeholder="Наприклад, з батьками, дружиною, братом">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Місце проживання</legend>
+        <div class="grid">
+          <div>
+            <label for="country">Країна</label>
+            <input type="text" id="country" name="country" placeholder="Україна">
+          </div>
+
+          <div>
+            <label for="region">Область</label>
+            <input type="text" id="region" name="region" placeholder="Одеська область">
+          </div>
+
+          <div>
+            <label for="city">Місто / селище</label>
+            <input type="text" id="city" name="city" placeholder="Одеса">
+          </div>
+
+          <div>
+            <label for="street">Вулиця</label>
+            <input type="text" id="street" name="street" placeholder="Наприклад, Незалежності">
+          </div>
+
+          <div>
+            <label for="house">Будинок</label>
+            <input type="text" id="house" name="house" placeholder="21">
+          </div>
+
+          <div>
+            <label for="apartment">Квартира</label>
+            <input type="text" id="apartment" name="apartment" placeholder="48">
+          </div>
+
+          <div>
+            <label for="postal">Поштовий індекс</label>
+            <input type="text" id="postal" name="postal" placeholder="65000">
+          </div>
+
+          <div>
+            <label for="residenceYears">Скільки років проживаєте за адресою</label>
+            <input type="number" id="residenceYears" name="residenceYears" min="0" step="1" placeholder="Наприклад, 5">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Освіта та навчання</legend>
+        <div class="grid">
+          <div>
+            <label for="education">Рівень освіти</label>
+            <select id="education" name="education">
+              <option value="">Оберіть...</option>
+              <option>Середня</option>
+              <option>Професійно-технічна</option>
+              <option>Неповна вища</option>
+              <option>Бакалавр</option>
+              <option>Магістр</option>
+              <option>Науковий ступінь</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="institution">Навчальний заклад</label>
+            <input type="text" id="institution" name="institution" placeholder="Наприклад, ОНУ ім. Мечникова">
+          </div>
+
+          <div>
+            <label for="specialty">Спеціальність</label>
+            <input type="text" id="specialty" name="specialty" placeholder="Наприклад, математика">
+          </div>
+
+          <div>
+            <label for="graduationYear">Рік закінчення</label>
+            <input type="number" id="graduationYear" name="graduationYear" min="1900" max="2100" step="1">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Зайнятість</legend>
+        <div class="grid">
+          <div>
+            <label for="employment">Статус зайнятості</label>
+            <select id="employment" name="employment">
+              <option value="">Оберіть...</option>
+              <option>Працюю</option>
+              <option>Студент / студентка</option>
+              <option>Не працюю</option>
+              <option>Пенсіонер / пенсіонерка</option>
+              <option>Інше</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="job">Місце роботи</label>
+            <input type="text" id="job" name="job" placeholder="Назва установи / компанії">
+          </div>
+
+          <div>
+            <label for="position">Посада</label>
+            <input type="text" id="position" name="position" placeholder="Наприклад, інженер">
+          </div>
+
+          <div>
+            <label for="experience">Стаж роботи (років)</label>
+            <input type="number" id="experience" name="experience" min="0" step="1" placeholder="Наприклад, 3">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Мови</legend>
+        <div class="full">
+          <label>Якими мовами володієте</label>
+          <div class="check-group">
+            <label class="check-item"><input type="checkbox" name="languages" value="Українська">Українська</label>
+            <label class="check-item"><input type="checkbox" name="languages" value="Англійська">Англійська</label>
+            <label class="check-item"><input type="checkbox" name="languages" value="Німецька">Німецька</label>
+            <label class="check-item"><input type="checkbox" name="languages" value="Французька">Французька</label>
+            <label class="check-item"><input type="checkbox" name="languages" value="Інша">Інша</label>
+          </div>
+          <div class="inline-note">Можна обрати кілька варіантів.</div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. Житлові умови</legend>
+        <div class="grid">
+          <div>
+            <label for="housingType">Тип житла</label>
+            <select id="housingType" name="housingType">
+              <option value="">Оберіть...</option>
+              <option>Квартира</option>
+              <option>Приватний будинок</option>
+              <option>Гуртожиток</option>
+              <option>Орендоване житло</option>
+              <option>Інше</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="rooms">Кількість кімнат</label>
+            <input type="number" id="rooms" name="rooms" min="0" step="1" placeholder="Наприклад, 2">
+          </div>
+
+          <div>
+            <label for="area">Площа житла (м²)</label>
+            <input type="number" id="area" name="area" min="0" step="0.1" placeholder="Наприклад, 54.5">
+          </div>
+
+          <div class="full">
+            <label>Наявність зручностей</label>
+            <div class="check-group">
+              <label class="check-item"><input type="checkbox" name="amenities" value="Водопровід">Водопровід</label>
+              <label class="check-item"><input type="checkbox" name="amenities" value="Газ">Газ</label>
+              <label class="check-item"><input type="checkbox" name="amenities" value="Інтернет">Інтернет</label>
+              <label class="check-item"><input type="checkbox" name="amenities" value="Центральне опалення">Центральне опалення</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. Транспорт і цифрові технології</legend>
+        <div class="grid">
+          <div>
+            <label for="car">Чи маєте автомобіль?</label>
+            <select id="car" name="car">
+              <option value="">Оберіть...</option>
+              <option>Так</option>
+              <option>Ні</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="internet">Доступ до інтернету</label>
+            <select id="internet" name="internet">
+              <option value="">Оберіть...</option>
+              <option>Постійно</option>
+              <option>Час від часу</option>
+              <option>Немає</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="phone">Номер телефону</label>
+            <input type="tel" id="phone" name="phone" placeholder="+380...">
+          </div>
+
+          <div>
+            <label for="email">Електронна пошта</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. Додаткові відомості</legend>
+        <div class="grid">
+          <div class="full">
+            <label for="photo">Фотографія</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+            <div class="inline-note">Можна прикріпити фотографію у форматі JPG, PNG або іншому зображенні.</div>
+          </div>
+
+          <div class="full">
+            <label for="extra">Інші відомості</label>
+            <textarea id="extra" name="extra" placeholder="Будь-яка додаткова інформація, яку ви хочете повідомити."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="buttons">
+        <button class="primary" type="button" onclick="showResult()">Показати дані</button>
+        <button class="secondary" type="reset" onclick="clearResult()">Очистити форму</button>
+      </div>
+
+      <div class="result" id="resultBox">
+        <h2>Підсумок</h2>
+        <p id="resultText"></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function getCheckedValues(name) {
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+        .map(el => el.value);
+    }
+
+    function showResult(){
+      const surname = document.getElementById("surname").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const education = document.getElementById("education").value;
+      const employment = document.getElementById("employment").value;
+      const languages = getCheckedValues("languages").join(", ");
+      const amenities = getCheckedValues("amenities").join(", ");
+      const resultBox = document.getElementById("resultBox");
+      const resultText = document.getElementById("resultText");
+
+      const fullName = [surname, name].filter(Boolean).join(" ");
+
+      resultBox.style.display = "block";
+      resultText.innerHTML = `
+        <b>Ім’я:</b> ${fullName || "не вказано"}<br>
+        <b>Місто проживання:</b> ${city || "не вказано"}<br>
+        <b>Освіта:</b> ${education || "не вказано"}<br>
+        <b>Зайнятість:</b> ${employment || "не вказано"}<br>
+        <b>Мови:</b> ${languages || "не вказано"}<br>
+        <b>Зручності:</b> ${amenities || "не вказано"}
+      `;
+
+      console.log("Форма переглянута");
+    }
+
+    function clearResult(){
+      document.getElementById("resultBox").style.display = "none";
+      document.getElementById("resultText").innerHTML = "";
+      console.log("Форму очищено");
+    }
+  </script>
+</body>
+</html>

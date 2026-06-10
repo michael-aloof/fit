@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача: площа кільця</title>
+    <style>
+        body{
+            font-family: "Times New Roman", serif;
+            font-size: 20px;
+            margin: 40px 60px;
+            background: #f4f8ff;
+            color: #1f2a44;
+        }
+
+        h1{
+            text-align: center;
+            color: darkred;
+        }
+
+        .box{
+            background: white;
+            border: 2px solid #b7c6e1;
+            border-radius: 14px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        label{
+            display: inline-block;
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        input{
+            font-size: 18px;
+            padding: 6px 8px;
+            width: 160px;
+            margin-bottom: 10px;
+        }
+
+        button{
+            font-size: 18px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 10px;
+            background: #2f5bea;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover{
+            background: #2447b8;
+        }
+
+        #answer{
+            font-weight: bold;
+            color: darkgreen;
+            margin-top: 16px;
+        }
+
+        #solution{
+            margin-top: 16px;
+            padding: 14px;
+            background: #eef5ff;
+            border-left: 5px solid #2f5bea;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .formula{
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Задача 6. Площа кільця</h1>
+
+<div class="box">
+    <p>
+        Дано дійсні числа <b>R1</b>, <b>R2</b> (<b>R2 &gt; R1 &gt; 0</b>), що задають відповідно внутрішній і зовнішній радіуси кільця.
+        Обчислити площу цього кільця.
+    </p>
+
+    <p>
+        Формула площі:
+        <span class="formula">S = π(R2² - R1²)</span>
+    </p>
+</div>
+
+<div class="box">
+    <p>
+        <label for="r1">R1:</label>
+        <input type="number" id="r1" step="any" placeholder="Внутрішній радіус">
+    </p>
+
+    <p>
+        <label for="r2">R2:</label>
+        <input type="number" id="r2" step="any" placeholder="Зовнішній радіус">
+    </p>
+
+    <button id="calcBtn" type="button">Обчислити</button>
+
+    <p id="answer"></p>
+
+    <div id="solution"></div>
+</div>
+
+<script>
+    const r1Input = document.getElementById("r1");
+    const r2Input = document.getElementById("r2");
+    const calcBtn = document.getElementById("calcBtn");
+    const answer = document.getElementById("answer");
+    const solution = document.getElementById("solution");
+
+    calcBtn.addEventListener("click", function () {
+        const r1 = parseFloat(r1Input.value);
+        const r2 = parseFloat(r2Input.value);
+
+        answer.textContent = "";
+        solution.style.display = "none";
+        solution.innerHTML = "";
+
+        if (Number.isNaN(r1) || Number.isNaN(r2)) {
+            const msg = "Введіть обидва значення R1 і R2.";
+            answer.textContent = msg;
+            alert(msg);
+            console.log(msg);
+            return;
+        }
+
+        if (r1 <= 0 || r2 <= 0) {
+            const msg = "Обидва радіуси мають бути додатніми числами.";
+            answer.textContent = msg;
+            alert(msg);
+            console.log(msg);
+            return;
+        }
+
+        if (r2 <= r1) {
+            const msg = "Потрібно, щоб R2 було більше за R1.";
+            answer.textContent = msg;
+            alert(msg);
+            console.log(msg);
+            return;
+        }
+
+        const area = Math.PI * (r2 * r2 - r1 * r1);
+
+        const resultText = "Площа кільця = " + area.toFixed(2);
+
+        answer.textContent = resultText;
+
+        alert(resultText);
+        console.log("R1 =", r1, "R2 =", r2, "S =", area);
+
+        solution.style.display = "block";
+        solution.innerHTML = `
+            <b>Розв’язання:</b><br><br>
+            1) Формула площі кільця:<br>
+            <span class="formula">S = π(R2² - R1²)</span><br><br>
+            2) Підставляємо значення:<br>
+            <span class="formula">S = π(${r2}² - ${r1}²)</span><br><br>
+            3) Обчислюємо:<br>
+            <span class="formula">S = ${area.toFixed(2)}</span>
+        `;
+    });
+</script>
+
+</body>
+</html>

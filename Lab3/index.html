@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Об'єднання комірок таблиці</h1>
+
+<div class="container">
+
+    <div class="picture">
+        <h2>Зображення варіанту</h2>
+        <img src="table_variant.png" alt="Варіант таблиці">
+    </div>
+
+    <div class="table_block">
+        <h2>Побудована таблиця</h2>
+
+        <table class="variantTable tableShadow">
+            <tr>
+                <td rowspan="2" class="blue"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td rowspan="2" class="red"></td>
+            </tr>
+
+            <tr>
+                <td rowspan="2" class="blue"></td>
+                <td rowspan="2" class="red"></td>
+            </tr>
+
+            <tr>
+                <td class="red"></td>
+                <td class="blue"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="blue"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<h2 class="schedule-title">Розклад занять на вівторок</h2>
+
+<table class="scheduleTable tableShadow">
+    <caption>2 курс, спеціальність «Математика», група Е7</caption>
+    <tr>
+        <th>Пара</th>
+        <th>Час</th>
+        <th>Дисципліна</th>
+        <th>Вид заняття</th>
+        <th>Викладач</th>
+        <th>Аудиторія</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>08:00–09:20</td>
+        <td>Комплексний аналіз</td>
+        <td>Лекція</td>
+        <td>доцент Самкова Г. Е.</td>
+        <td class="room">73</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>09:30–10:50</td>
+        <td>Алгебра і теорія чисел</td>
+        <td>Лекція</td>
+        <td>Варбанець</td>
+        <td class="room">98</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>11:20–12:40</td>
+        <td>Алгебра і теорія чисел</td>
+        <td>Практика</td>
+        <td>Варбанець</td>
+        <td class="room">98</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>12:50–14:10</td>
+        <td>Вікно</td>
+        <td>—</td>
+        <td>—</td>
+        <td class="room">—</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>14:20–15:40</td>
+        <td>Вікно</td>
+        <td>—</td>
+        <td>—</td>
+        <td class="room">—</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>15:50–17:10</td>
+        <td>Базова загальновійськова підготовка</td>
+        <td>Лекція</td>
+        <td>—</td>
+        <td class="room">Львівська 15</td>
+    </tr>
+</table>
+
+<h2 class="comparison-title">Порівняння математиків</h2>
+
+<table class="comparisonTable tableShadow">
+    <thead>
+        <tr>
+            <th>Ім’я</th>
+            <th>Роки життя</th>
+            <th>Основні теореми</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ролль</td>
+            <td>1652–1719</td>
+            <td>Теорема Ролля</td>
+        </tr>
+        <tr>
+            <td>Лагранж</td>
+            <td>1736–1813</td>
+            <td>Теорема про середнє значення, внесок у варіаційне числення</td>
+        </tr>
+        <tr>
+            <td>Ейлер</td>
+            <td>1707–1783</td>
+            <td>Формула Ейлера, теореми в аналізі та теорії чисел</td>
+        </tr>
+        <tr>
+            <td>Ферма</td>
+            <td>1607–1665</td>
+            <td>Мала теорема Ферма</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

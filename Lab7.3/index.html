@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Події миші та display</title>
+
+<style>
+
+body{
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    background-color: aliceblue;
+    margin: 40px;
+}
+
+h1{
+    color: darkblue;
+}
+
+div{
+
+    display: block;
+
+    background-color: lightblue;
+
+    border: 2px solid blue;
+
+    padding: 15px;
+
+    margin: 10px;
+
+}
+
+span{
+
+    display: block;
+
+    background-color: yellow;
+
+    border: 2px solid orange;
+
+    padding: 10px;
+
+    margin: 10px;
+
+}
+
+button{
+
+    font-size: 18px;
+
+    padding: 10px;
+
+    margin: 10px;
+
+}
+
+#info{
+
+    color: darkred;
+
+    font-weight: bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+Керування відображенням елементів
+</h1>
+
+<div class="element">
+Перший DIV
+</div>
+
+<div class="element">
+Другий DIV
+</div>
+
+<span class="element">
+Перший SPAN
+</span>
+
+<span class="element">
+Другий SPAN
+</span>
+
+<br>
+
+<button onclick="makeInline()">
+Зробити всі inline
+</button>
+
+<button onclick="makeBlock()">
+Повернути всі у block
+</button>
+
+<p id="info">
+Поточний стан: block
+</p>
+
+<script>
+
+let elements = document.querySelectorAll(".element");
+
+function makeInline()
+{
+
+    elements.forEach(function(el)
+    {
+        el.style.display = "inline";
+    });
+
+    document.getElementById("info").innerHTML =
+    "Поточний стан: inline";
+
+    console.log("Усі елементи стали inline");
+
+}
+
+
+function makeBlock()
+{
+
+    elements.forEach(function(el)
+    {
+        el.style.display = "block";
+    });
+
+    document.getElementById("info").innerHTML =
+    "Поточний стан: block";
+
+    console.log("Усі елементи стали block");
+
+}
+
+
+elements.forEach(function(el)
+{
+
+    el.addEventListener("mouseover", function()
+    {
+
+        el.style.backgroundColor = "lightgreen";
+
+        console.log("Курсор наведено");
+
+    });
+
+
+    el.addEventListener("mouseout", function()
+    {
+
+        el.style.backgroundColor = "";
+
+        console.log("Курсор відведено");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

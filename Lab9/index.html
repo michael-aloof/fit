@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання JS A–D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Завдання A–D</h1>
+      <p class="subtitle">
+        Введення даних, обчислення результатів, повідомлення у вікні та на сторінці.
+      </p>
+    </div>
+
+    <ol class="tasks">
+      <li class="task">
+        <div class="task-title"><span class="badge">A</span>Університет</div>
+        <p>
+          Складіть програму, яка запитує у користувача за допомогою <strong>prompt</strong> назву ВНЗ, в якій він навчається,
+          а потім після введення даних друкує на сторінці повідомлення.
+        </p>
+        <p class="formula">Приклад: “Я вчуся в ...”</p>
+        <div class="controls">
+          <button type="button" onclick="taskA()">Виконати A</button>
+        </div>
+        <div class="answer" id="answerA"></div>
+      </li>
+
+      <li class="task">
+        <div class="task-title"><span class="badge">B</span>Пробіжка</div>
+        <p>
+          Дано розміри (в метрах) футбольного поля, що має форму прямокутника.
+          Яку відстань пробіжить спортсмен, що “намотав” кругів навколо цього поля?
+          Число <strong>n</strong> задається з клавіатури.
+        </p>
+        <p class="formula">
+          Відстань = n × периметр поля = n × 2 × (a + b)
+        </p>
+        <div class="controls">
+          <button type="button" onclick="taskB()">Виконати B</button>
+        </div>
+        <div class="answer" id="answerB"></div>
+      </li>
+
+      <li class="task">
+        <div class="task-title"><span class="badge">C</span>Задом наперед</div>
+        <p>
+          Дано тризначне натуральне число. Вивести на екран число,
+          що виходить при прочитанні вихідного числа праворуч наліво.
+        </p>
+        <div class="controls">
+          <button type="button" onclick="taskC()">Виконати C</button>
+        </div>
+        <div class="answer" id="answerC"></div>
+      </li>
+
+      <li class="task">
+        <div class="task-title"><span class="badge">D</span>Формула</div>
+        <p>
+          Наведено деякі дійсні числа <strong>a</strong> і <strong>b</strong>.
+          Обчислити значення виразу з точністю до сотих.
+          Перевірка даних на коректність потрібна.
+        </p>
+        <div class="formula">
+          z = sin(a² + b²) · (a / (a² + 25) + b) / (√b + (a + b) / 2)
+        </div>
+
+        <div class="controls">
+          <input type="number" id="aInput" step="any" placeholder="Введіть a">
+          <input type="number" id="bInput" step="any" placeholder="Введіть b">
+          <button type="button" onclick="taskD()">Обчислити D</button>
+        </div>
+
+        <p class="note">
+          Для коректного обчислення: <strong>b ≥ 0</strong> і знаменник не повинен дорівнювати нулю.
+        </p>
+
+        <div class="answer" id="answerD"></div>
+
+        <div class="table-wrap">
+          <table id="resultTable">
+            <tr>
+              <th>a</th>
+              <th>b</th>
+              <th>z</th>
+            </tr>
+          </table>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

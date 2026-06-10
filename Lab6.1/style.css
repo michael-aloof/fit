@@ -1,0 +1,54 @@
+body{
+    background-color: aliceblue;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    margin: 40px 60px;
+    color: #1a1a1a;
+}
+
+h1{
+    text-align: center;
+    color: darkred;
+}
+
+h2{
+    color: darkblue;
+    margin-top: 24px;
+}
+
+button{
+    background-color: royalblue;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button:hover{
+    background-color: dodgerblue;
+}
+
+input{
+    font-size: 18px;
+    padding: 6px 8px;
+    margin: 6px 4px 6px 0;
+    width: 160px;
+}
+
+#result{
+    font-weight: bold;
+    color: darkgreen;
+    min-height: 24px;
+}
+
+#demo1{
+    min-height: 24px;
+}
+
+#consoleText{
+    color: #444;
+    font-style: italic;
+}

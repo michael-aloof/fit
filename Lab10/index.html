@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Робота з векторами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Робота з векторами</h1>
+
+<div class="container">
+
+    <div class="block">
+        <h2>A. Заповнення вектора випадковими числами</h2>
+
+        <label>Кількість елементів:</label>
+        <input type="number" id="size">
+
+        <button onclick="generateVector()">
+            Згенерувати
+        </button>
+
+        <p id="vector"></p>
+    </div>
+
+
+    <div class="block">
+        <h2>B. Знаходження норми вектора</h2>
+
+        <button onclick="findNorm()">
+            Знайти норму
+        </button>
+
+        <p id="norm"></p>
+    </div>
+
+
+    <div class="block">
+        <h2>C. Нормувати вектор</h2>
+
+        <button onclick="normalizeVector()">
+            Нормувати
+        </button>
+
+        <p id="normalized"></p>
+    </div>
+
+
+    <div class="block">
+        <h2>D. Кількість нульових координат</h2>
+
+        <button onclick="countZeros()">
+            Знайти
+        </button>
+
+        <p id="zeros"></p>
+    </div>
+
+
+    <div class="block">
+        <h2>E. Різниця двох векторів</h2>
+
+        <label>Другий вектор:</label>
+
+        <input
+                type="text"
+                id="vector2"
+                placeholder="Наприклад: 1 2 3 4">
+
+        <button onclick="subtractVectors()">
+            Обчислити
+        </button>
+
+        <p id="difference"></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
